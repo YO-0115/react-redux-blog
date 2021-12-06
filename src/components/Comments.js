@@ -7,7 +7,7 @@ function Comments({ currentTheme }) {
   useEffect(() => {
     const script = document.createElement('script')
     script.src = 'https://utteranc.es/client.js'
-    script.setAttribute('repo', 'YO-0115/react-blog')
+    script.setAttribute('repo', 'YO-0115/react-redux-blog')
     script.setAttribute('issue-term', 'pathname')
 
     if (currentTheme === 'light') {

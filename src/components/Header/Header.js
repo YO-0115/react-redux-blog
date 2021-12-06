@@ -44,8 +44,8 @@ function Header({ isUser, currentTheme, setCurrentTheme }) {
     setTheme('light')
   }
 
-  const handleLogout = async () => {
-    await dispatch(logout())
+  const handleLogout = () => {
+    dispatch(logout())
     setIsMenuOpen(false)
   }
 

@@ -25,9 +25,9 @@ function LoginPage() {
   const errorMessage = useSelector(selectErrorMessage)
   const isUserLoading = useSelector(selectIsUserLoading)
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
-    await dispatch(login(history, username, password))
+    dispatch(login(history, username, password))
   }
 
   const handleUsernameInput = (e) => {

@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { createSlice } from '@reduxjs/toolkit'
 import { setAuthToken } from '../../utils'
 import { fetchRegister, fetchLogin, fetchGetMe } from '../../WebAPI'
@@ -69,7 +68,7 @@ export const getMe = () => async (dispatch) => {
     const response = await fetchGetMe()
     if (response.ok !== 1) {
       setAuthToken(null)
-      dispatch(setErrorMessage(getMeResponse.toString()))
+      dispatch(setErrorMessage(response.toString()))
       return
     }
     dispatch(setUser(response.data))

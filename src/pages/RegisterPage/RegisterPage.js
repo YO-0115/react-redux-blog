@@ -23,9 +23,9 @@ function LoginPage() {
   const dispatch = useDispatch()
   const history = useHistory()
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
-    await dispatch(register(history, nickname, username, password))
+    dispatch(register(history, nickname, username, password))
   }
 
   const handleNicknameInput = (e) => {

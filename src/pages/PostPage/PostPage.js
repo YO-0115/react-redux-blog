@@ -34,10 +34,8 @@ function PostPage({ currentTheme }) {
   const post = useSelector(selectPost)
 
   useLayoutEffect(() => {
-    (async () => {
-      await dispatch(getPost(id))
-      window.scrollTo(0, 0)
-    })()
+    dispatch(getPost(id))
+    window.scrollTo(0, 0)
   }, [id, dispatch])
 
   const handleDelete = async () => {

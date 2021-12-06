@@ -1,4 +1,3 @@
-/*eslint-disable*/
 import React, { useState, useEffect } from 'react'
 import { useHistory, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
@@ -33,7 +32,7 @@ function NewPostPage({ edit }) {
   const history = useHistory()
 
   useEffect(() => {
-    ;(async () => {
+    (async () => {
       if (!user) return history.push('/')
 
       if (isEdit) {
@@ -53,16 +52,16 @@ function NewPostPage({ edit }) {
     setErrorMessage(null)
   }
 
-  const handleSendPost = async (e) => {
+  const handleSendPost = (e) => {
     e.preventDefault()
     setErrorMessage(null)
 
     if (!title || !content) return setErrorMessage('未確實填寫')
 
     if (isEdit) {
-      await dispatch(getEditPost(history, editId, title, content))
+      dispatch(getEditPost(history, editId, title, content))
     } else {
-      await dispatch(getNewPost(history, title, content))
+      dispatch(getNewPost(history, title, content))
     }
   }
 

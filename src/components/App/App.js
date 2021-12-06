@@ -1,6 +1,5 @@
-/* eslint-disable */
 import React, { useState, useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { HashRouter as Router, Switch, Route } from 'react-router-dom'
 import styled from 'styled-components'
 import { ThemeProvider } from 'styled-components'
@@ -27,7 +26,7 @@ function App() {
   const [currentTheme, setCurrentTheme] = useState(getTheme())
 
   useEffect(() => {
-    ;(async () => {
+    (async () => {
       setIsUser(false)
       const getToken = getAuthToken()
       if (!getToken) return setIsUser(true)
